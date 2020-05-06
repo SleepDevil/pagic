@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    // 开启的特性
+    //
+    // 兼容 babel 模块
+    "esModuleInterop": true,
+    // React 项目需要配置此项
+    "jsx": "react",
+    // paths 的基准路径
+    "baseUrl": "src",
+    // 模块名到基于基准路径映射的列表
+    "paths": {
+      "pagic": ["Pagic"]
+    },
+
+    // 严格模式，可选择性的开启，建议开启的越多越好
+    //
+    // 严格模式
+    "strict": false,
+    // 不是函数的所有返回路径都有返回值时报错
+    "noImplicitReturns": true,
+    // 若有未使用的局部变量则抛错
+    "noUnusedLocals": true,
+    // 若有未使用的参数则抛错
+    "noUnusedParameters": true
+  }
+}

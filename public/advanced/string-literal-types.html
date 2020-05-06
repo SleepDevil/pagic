@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>字符串字面量类型</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <aside>
+      <nav>
+        <ul>
+          <li></li>
+        </ul>
+      </nav>
+    </aside>
+    <section>
+      <article>
+        <h1
+          id="%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E9%9D%A2%E9%87%8F%E7%B1%BB%E5%9E%8B"
+        >
+          字符串字面量类型
+        </h1>
+        <p>字符串字面量类型用来约束取值只能是某几个字符串中的一个。</p>
+        <h2 id="%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90">简单的例子</h2>
+        <pre
+          class="language-ts"
+        ><code class="language-ts">type EventNames <span class="token operator">=</span> <span class="token string">'click'</span> <span class="token operator">|</span> <span class="token string">'scroll'</span> <span class="token operator">|</span> <span class="token string">'mousemove'</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">handleEvent</span><span class="token punctuation">(</span>ele<span class="token punctuation">:</span> Element<span class="token punctuation">,</span> event<span class="token punctuation">:</span> EventNames<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// do something</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">handleEvent</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'scroll'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 没问题</span>
+<span class="token function">handleEvent</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'world'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'dbclick'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 报错，event 不能为 'dbclick'</span>
+
+<span class="token comment" spellcheck="true">// index.ts(7,47): error TS2345: Argument of type '"dbclick"' is not assignable to parameter of type 'EventNames'.</span>
+</code></pre>
+        <p>
+          上例中，我们使用 <code>type</code> 定了一个字符串字面量类型
+          <code>EventNames</code>，它只能取三种字符串中的一种。
+        </p>
+        <p>
+          注意，<strong
+            >类型别名与字符串字面量类型都是使用
+            <code>type</code> 进行定义。</strong
+          >
+        </p>
+        <h2 id="%E5%8F%82%E8%80%83">参考</h2>
+        <ul>
+          <li>
+            <a
+              href="http://www.typescriptlang.org/docs/handbook/advanced-types.html#string-literal-types"
+              >Advanced Types # Type Aliases</a
+            >（<a
+              href="https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Advanced%20Types.html#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E9%9D%A2%E9%87%8F%E7%B1%BB%E5%9E%8B"
+              >中文版</a
+            >）
+          </li>
+        </ul>
+        <hr />
+        <ul>
+          <li><a href="type-aliases.html">上一章：类型别名</a></li>
+          <li><a href="tuple.html">下一章：元组</a></li>
+        </ul>
+      </article>
+    </section>
+  </body>
+</html>
