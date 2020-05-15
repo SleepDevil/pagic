@@ -1,4 +1,3 @@
 module.exports = {
-  srcDir: 'site',
-  watch: true
+  srcDir: 'site'
 };

@@ -2,8 +2,14 @@
   "name": "pagic",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/Pagic.js",
+  "bin": {
+    "pagic": "bin/pagic.js"
+  },
   "scripts": {
+    "start": "tsc && node bin/pagic.js build -ws",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -29,11 +35,13 @@
     "eslint-config-alloy": "^3.7.1",
     "eslint-plugin-react": "^7.19.0",
     "jest": "^25.5.4",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
     "typescript": "^3.8.3"
   },
   "dependencies": {
     "chokidar": "^3.4.0",
+    "commander": "^5.1.0",
     "ecstatic": "^4.1.4",
     "front-matter": "^3.1.0",
     "fs-extra": "^9.0.0",

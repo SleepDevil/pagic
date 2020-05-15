@@ -13,6 +13,27 @@
       "pagic": ["Pagic"]
     },
 
+    // 生成文件的配置
+    //
+    // 指定生成文件的 ECMAScript 版本
+    "target": "es5",
+    // 指定生成哪个模块系统代码
+    "module": "CommonJS",
+    // 决定如何处理模块
+    "moduleResolution": "node",
+    // 生成相应的 .map文件
+    "sourceMap": true,
+    // 生成的文件的换行符
+    "newLine": "lf",
+    // 是否生成 .d.ts 文件
+    "declaration": true,
+    // 编译结果中包含从 tslib 中导入的 __extends, __rest 等
+    "importHelpers": true,
+    // 输出的目录
+    "outDir": "lib",
+    // 不生成输出
+    // "noEmit": true,
+
     // 严格模式，可选择性的开启，建议开启的越多越好
     //
     // 严格模式
@@ -23,5 +44,6 @@
     "noUnusedLocals": true,
     // 若有未使用的参数则抛错
     "noUnusedParameters": true
-  }
+  },
+  "include": ["src/**/*"]
 }

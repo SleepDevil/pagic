@@ -47,6 +47,16 @@ export default class Pagic {
   private layoutPaths: string[] = [];
   private staticPaths: string[] = [];
 
+  public constructor() {
+    const projectConfigPath = path.resolve(process.cwd(), 'pagic.config.js');
+    if (!fs.existsSync(projectConfigPath)) {
+      return;
+    }
+
+    const projectConfig = require(projectConfigPath).default;
+    this.setConfig(projectConfig);
+  }
+
   public setConfig(config: PagicConfig) {
     this.config = {
       ...this.config,
