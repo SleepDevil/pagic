@@ -71,6 +71,7 @@ const md: PagicPlugin = async (pagic) => {
       outputPath: pageProps.outputPath.replace(/README\.html$/, 'index.html'),
       title: env.title,
       content: <article dangerouslySetInnerHTML={{ __html: htmlContent }} />,
+      htmlContent,
       ...frontMatter
     };
   }

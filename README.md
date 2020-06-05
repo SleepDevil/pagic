@@ -14,6 +14,8 @@ The easiest way to generate static html page from markdown, built with Deno! ðŸ¦
 - [Configuration](#configuration)
 - [Plugins and themes](#plugins-and-themes)
 
+WARNING: This project is under development so api would change without
+
 ## Live demo
 
 - [TypeScript Tutorial](https://ts.xcatliu.com/) ([GitHub](https://github.com/xcatliu/typescript-tutorial/))
@@ -24,9 +26,9 @@ The easiest way to generate static html page from markdown, built with Deno! ðŸ¦
 
 ```bash
 # Install deno https://deno.land/#installation
-curl -fsSL https://deno.land/x/install/install.sh
+curl -fsSL https://deno.land/x/install/install.sh | sh
 # Install pagic
-deno install --unstable --allow-read --allow-write --allow-net https://deno.land/x/pagic/pagic.ts
+deno install --unstable --allow-read --allow-write --allow-net https://deno.land/x/pagic/mod.ts
 ```
 
 ### Markdown + Layout => HTML
@@ -46,7 +48,7 @@ The `src/_layout.tsx` is a simple react component:
 ```tsx
 // @deno-types="https://deno.land/x/types/react/v16.13.1/react.d.ts"
 import React from 'https://dev.jspm.io/react@16.13.1';
-import { PagicLayout } from 'https://deno.land/x/pagic/pagic.ts';
+import { PagicLayout } from 'https://deno.land/x/pagic/mod.ts';
 
 const Layout: PagicLayout = ({ title, content }) => (
   <html>
@@ -213,7 +215,7 @@ Every item in the front matter will pass to the `_layout.tsx` as the props:
 ```tsx
 // @deno-types="https://deno.land/x/types/react/v16.13.1/react.d.ts"
 import React from 'https://dev.jspm.io/react@16.13.1';
-import { PagicLayout } from 'https://deno.land/x/pagic/pagic.ts';
+import { PagicLayout } from 'https://deno.land/x/pagic/mod.ts';
 
 const Layout: PagicLayout = ({ title, content, author, published }) => (
   <html>

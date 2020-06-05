@@ -20,7 +20,8 @@ const init: PagicPlugin = async (pagic) => {
       layoutPath,
       outputPath,
       title: '',
-      content: null
+      content: null,
+      script: null
     };
   }
 };

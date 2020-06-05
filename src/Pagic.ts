@@ -1,6 +1,6 @@
-import * as path from 'https://deno.land/std@0.54.0/path/mod.ts';
-import * as fs from 'https://deno.land/std@0.54.0/fs/mod.ts';
-import { green, underline, yellow } from 'https://deno.land/std@0.54.0/fmt/colors.ts';
+import * as path from 'https://deno.land/std@0.56.0/path/mod.ts';
+import * as fs from 'https://deno.land/std@0.56.0/fs/mod.ts';
+import { green, underline, yellow } from 'https://deno.land/std@0.56.0/fmt/colors.ts';
 
 // @deno-types="https://deno.land/x/types/react/v16.13.1/react.d.ts"
 import React from 'https://dev.jspm.io/react@16.13.1';
@@ -35,6 +35,7 @@ export interface PageProps {
   outputPath: string;
   title: string;
   content: React.ReactElement | null;
+  script: React.ReactElement | null;
   [key: string]: any;
 }
 
@@ -62,7 +63,7 @@ export default class Pagic {
       /\/npm\-debug\.log$/,
       /\/node_modules\//
     ],
-    plugins: ['init', 'md', 'tsx', 'layout', 'write'],
+    plugins: ['init', 'md', 'tsx', 'script', 'layout', 'write'],
     watch: false,
     serve: false,
     port: 8000
